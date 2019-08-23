@@ -48,33 +48,33 @@
 
 
 
-// 5. There are three mistakes in this code that would cause it to break our application. Find the mistakes and fix them:
+// // 5. There are three mistakes in this code that would cause it to break our application. Find the mistakes and fix them:
 
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
 
-class Recipes extends Component{
-  constructor(props){
-    super(props)
-    this.state = {
-      recipes:[
-        {name: 'Meatballs'},
-        {name: 'Mac & Cheese'}]
-    }
-  }
+// class Recipes extends Component{
+//   constructor(props){
+//     super(props)
+//     this.state = {
+//       recipes:[
+//         {name: 'Meatballs'},
+//         {name: 'Mac & Cheese'}]
+//     }
+//   }
 
-  render() {
-    let recipes = this.state.recipes
-    recipes = recipes.map(recipe => {
-        return(
-          <li key={recipe.name}>{recipe.name}</li>
-        )
-      })
-    return(
-      <ul>
-        {recipes}
-      </ul>
-    )
-  }
-}
+//   render() {
+//     let recipes = this.state.recipes
+//     recipes = recipes.map(recipe => {
+//         return(
+//           <li key={recipe.name}>{recipe.name}</li>
+//         )
+//       })
+//     return(
+//       <ul>
+//         {recipes}
+//       </ul>
+//     )
+//   }
+// }
 
-export default Recipes
+// export default Recipes
