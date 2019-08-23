@@ -3,37 +3,48 @@
 
 // NOTE: In this assessment you will NOT be running a react file structure
 
-// 1. Write a React component that prints "I am a component!" Be sure to include all necessary imports, exports, etc...
+// // 1. Write a React component that prints "I am a component!" Be sure to include all necessary imports, exports, etc...
+// import React from "react"
+// export default class Print extends React.Component{
+//   render(){
+//     return(
+//       <p>I am a component</p>
+//     )
+//   }
+// }
 
 
+// // 2. Refactor this vanilla javascript loop to a map function. The output should remain the same. 
+
+// var names = ["Ford Prefect", "Arthur Dent", "Trillian", "Zaphod", "Vogon", "Marvin, the Paranoid Android"]
+
+// for(let i=0; i<names.length; i++){
+//   console.log(`${names[i]} is ${names[i].length} characters long.`)
+// }
+
+// names.map(el=>console.log(
+// `${el} is ${el.length} characters long`))
 
 
+// // 3. Destructure the following variables out of state:
 
-// 2. Refactor this vanilla javascript loop to a map function. The output should remain the same. 
+// this.state = {
+//   name: "Dracula",
+//   home: "Transylvania",
+//   dislikes: ["mirrors", "garlic", "wooden stakes"]
+// }
 
-var names = ["Ford Prefect", "Arthur Dent", "Trillian", "Zaphod", "Vogon", "Marvin, the Paranoid Android"]
+// let { name, home, dislikes } = this.state
 
-for(let i=0; i<names.length; i++){
-  console.log(`${names[i]} is ${names[i].length} characters long.`)
-}
+// // 4. Write a React method that would add one to the count and update the state.
 
-
-
-// 3. Destructure the following variables out of state:
-
-this.state = {
-  name: "Dracula",
-  home: "Transylvania",
-  dislikes: ["mirrors", "garlic", "wooden stakes"]
-}
-
-
-
-// 4. Write a React method that would add one to the count and update the state.
-
-this.state = {
-  count: 0
-}
+// this.state = {
+//   count: 0
+// }
+// addOne = () => {
+//   let newCount = count+1
+//   this.setState({count: newCount})
+// }
 
 
 
@@ -41,23 +52,24 @@ this.state = {
 
 import React, { Component } from 'react';
 
-class Recipes {
+class Recipes extends Component{
   constructor(props){
     super(props)
     this.state = {
-      recipes:
+      recipes:[
         {name: 'Meatballs'},
-        {name: 'Mac & Cheese'}
+        {name: 'Mac & Cheese'}]
     }
   }
 
   render() {
-    return(
-      let recipes = recipes.map(recipe => {
+    let recipes = this.state.recipes
+    recipes = recipes.map(recipe => {
         return(
           <li key={recipe.name}>{recipe.name}</li>
         )
       })
+    return(
       <ul>
         {recipes}
       </ul>
